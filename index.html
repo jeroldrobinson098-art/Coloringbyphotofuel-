@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coloring by Photofuel | Photo Retouching</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #171512;
+  --card: #211e19;
+  --text: #f3eee5;
+  --muted: #b7aea1;
+  --gold: #d8b47a;
+  --line: rgba(243,238,229,.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.container {
+  width: min(1150px, 92%);
+  margin: auto;
+}
+
+section {
+  padding: 85px 0;
+}
+
+h1, h2, h3 {
+  font-family: "Playfair Display", serif;
+}
+
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.gold {
+  color: var(--gold);
+}
+
+/* NAVIGATION */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(23,21,18,.95);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font: 600 23px "Playfair Display", serif;
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+nav {
+  display: flex;
+  gap: 22px;
+  font-size: 13px;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+.menu {
+  display: none;
+  background: transparent;
+  color: white;
+  border: 1px solid var(--line);
+  padding: 8px 12px;
+  font-size: 20px;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 630px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg,
+    rgba(15,13,11,.94),
+    rgba(15,13,11,.65),
+    rgba(15,13,11,.25)),
+    url("https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1800&q=85")
+    center 35% / cover no-repeat;
+}
+
+.hero-content {
+  padding: 85px 0

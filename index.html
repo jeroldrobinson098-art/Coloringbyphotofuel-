@@ -3,19 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coloring by Photofuel | Photo Retouching</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<title>Coloring by Photofuel</title>
 
 <style>
 :root {
-  --bg: #171512;
-  --card: #211e19;
-  --text: #f3eee5;
-  --muted: #b7aea1;
-  --gold: #d8b47a;
-  --line: rgba(243,238,229,.15);
+  --bg: #11100e;
+  --text: #f6f0e7;
+  --muted: #c1b8aa;
+  --gold: #e4b66d;
+  --line: #39332a;
 }
 
 * {
@@ -32,8 +28,8 @@ html {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: "DM Sans", sans-serif;
-  line-height: 1.7;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.65;
 }
 
 a {
@@ -42,48 +38,26 @@ a {
 }
 
 img {
-  width: 100%;
   display: block;
+  width: 100%;
   object-fit: cover;
 }
 
 .container {
-  width: min(1150px, 92%);
+  width: min(1120px, 91%);
   margin: auto;
 }
-
-section {
-  padding: 85px 0;
-}
-
-h1, h2, h3 {
-  font-family: "Playfair Display", serif;
-}
-
-.eyebrow {
-  color: var(--gold);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.gold {
-  color: var(--gold);
-}
-
-/* NAVIGATION */
 
 header {
   position: sticky;
   top: 0;
-  z-index: 20;
-  background: rgba(23,21,18,.95);
+  z-index: 10;
+  background: #11100ef5;
   border-bottom: 1px solid var(--line);
 }
 
 .nav {
-  min-height: 75px;
+  min-height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -91,10 +65,11 @@ header {
 }
 
 .logo {
-  font: 600 23px "Playfair Display", serif;
+  font: bold 24px Georgia, serif;
 }
 
-.logo span {
+.logo span,
+.gold {
   color: var(--gold);
 }
 
@@ -113,26 +88,509 @@ nav a:hover {
   background: transparent;
   color: white;
   border: 1px solid var(--line);
-  padding: 8px 12px;
-  font-size: 20px;
+  padding: 7px 11px;
+  font-size: 21px;
 }
 
-/* HERO */
-
 .hero {
-  min-height: 630px;
+  min-height: 520px;
   display: flex;
   align-items: center;
-  position: relative;
-  overflow: hidden;
   background:
-    linear-gradient(90deg,
-    rgba(15,13,11,.94),
-    rgba(15,13,11,.65),
-    rgba(15,13,11,.25)),
+    linear-gradient(90deg, #11100ef2, #11100e90, #11100e25),
     url("https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1800&q=85")
     center 35% / cover no-repeat;
 }
 
 .hero-content {
-  padding: 85px 0
+  max-width: 600px;
+  padding: 90px 0;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(40px, 6vw, 66px);
+  margin: 16px 0;
+}
+
+h2 {
+  font-size: clamp(30px, 4vw, 42px);
+  margin: 10px 0 16px;
+}
+
+p {
+  color: var(--muted);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 22px;
+  background: var(--gold);
+  color: #17120a;
+  padding: 12px 23px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--gold);
+}
+
+section {
+  padding: 70px 0;
+  border-top: 1px solid var(--line);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.about-img {
+  height: 360px;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.feature {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 13px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.card {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #171512;
+}
+
+.icon {
+  color: var(--gold);
+  font-size: 25px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 14px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.gallery a {
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+.gallery img {
+  height: 190px;
+  transition: transform 0.35s;
+}
+
+.gallery a:hover img {
+  transform: scale(1.06);
+}
+
+.price {
+  font: 600 38px Georgia, serif;
+  color: var(--gold);
+  margin: 10px 0;
+}
+
+.testimonial {
+  text-align: center;
+  max-width: 720px;
+  margin: auto;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+
+.contact-box {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.contact-box p {
+  margin: 8px 0;
+}
+
+footer {
+  padding: 25px 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 800px) {
+  nav {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: #11100e;
+    padding: 20px;
+    flex-direction: column;
+    border-bottom: 1px solid var(--line);
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery img {
+    height: 180px;
+  }
+
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero {
+    min-height: 480px;
+    background-position: 60% center;
+  }
+
+  .hero-content {
+    padding: 70px 0;
+  }
+
+  .section-head {
+    align-items: start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 430px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .gallery img {
+    height: 150px;
+  }
+
+  section {
+    padding: 52px 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">
+      Coloring <span>by Photofuel</span>
+    </a>
+
+    <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
+
+    <nav id="navLinks">
+      <a href="#home">HOME</a>
+      <a href="#about">ABOUT</a>
+      <a href="#services">SERVICES</a>
+      <a href="#portfolio">PORTFOLIO</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+      <div class="eyebrow">Photo Retouching & Color Grading</div>
+
+      <h1>
+        Turning Good Photos<br>
+        Into <span class="gold">Great Memories</span>
+      </h1>
+
+      <p>
+        Professional photo retouching, color grading and enhancement
+        for wedding, portrait and model shoots.
+      </p>
+
+      <a class="btn" href="#portfolio">View Portfolio →</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about-grid">
+
+    <div>
+      <div class="eyebrow">About Me</div>
+      <h2>Hi, I'm Photofuel</h2>
+
+      <p>
+        I specialize in professional photo retouching, color grading
+        and enhancement. My goal is to bring out the best in your
+        photos with a natural, clean and vibrant finish that reflects
+        the mood and feel of your moments.
+      </p>
+
+      <div class="features">
+        <div class="feature">✦<br>Professional Retouching</div>
+        <div class="feature">◇<br>Natural Look</div>
+        <div class="feature">✧<br>High Quality</div>
+        <div class="feature">◷<br>On-Time Delivery</div>
+      </div>
+    </div>
+
+    <img
+      class="about-img"
+      src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85"
+      alt="Wedding photography"
+      loading="lazy"
+    >
+
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Services</div>
+        <h2>What I Do</h2>
+      </div>
+
+      <p>High-quality retouching and color grading tailored to your needs.</p>
+    </div>
+
+    <div class="cards">
+
+      <article class="card">
+        <div class="icon">✧</div>
+        <h3>Wedding Photos</h3>
+        <p>Timeless memories, beautifully retouched.</p>
+      </article>
+
+      <article class="card">
+        <div class="icon">◎</div>
+        <h3>Portrait Retouching</h3>
+        <p>Clean, natural and professional portraits.</p>
+      </article>
+
+      <article class="card">
+        <div class="icon">▣</div>
+        <h3>Model Shoots</h3>
+        <p>Enhance fashion and creative photos.</p>
+      </article>
+
+      <article class="card">
+        <div class="icon">◈</div>
+        <h3>Color Grading</h3>
+        <p>Rich tones, perfect mood, better feel.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Portfolio</div>
+        <h2>My Work</h2>
+      </div>
+
+      <p>Selected photography and retouching inspiration.</p>
+    </div>
+
+    <div class="gallery">
+
+      <a href="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85" target="_blank" rel="noopener">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" alt="Wedding couple" loading="lazy">
+      </a>
+
+      <a href="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85" target="_blank" rel="noopener">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Portrait" loading="lazy">
+      </a>
+
+      <a href="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=85" target="_blank" rel="noopener">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" alt="Model portrait" loading="lazy">
+      </a>
+
+      <a href="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85" target="_blank" rel="noopener">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80" alt="Outdoor photography" loading="lazy">
+      </a>
+
+      <a href="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=85" target="_blank" rel="noopener">
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80" alt="Wedding details" loading="lazy">
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container testimonial">
+    <div class="eyebrow">Simple, Transparent Pricing</div>
+    <h2>Professional Retouching</h2>
+
+    <div class="price">
+      ₹120 <span style="font-size:17px;color:var(--muted)">/ image</span>
+    </div>
+
+    <p>
+      Delivery usually takes 2–3 days, depending on the amount
+      and complexity of work.
+    </p>
+
+    <a class="btn btn-outline" href="#contact">Discuss Your Project →</a>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container contact-grid">
+
+    <div>
+      <div class="eyebrow">Contact</div>
+      <h2>Let's Work Together</h2>
+
+      <p>
+        Have a project in mind? Get in touch to discuss your
+        photo retouching needs.
+      </p>
+
+      <a class="btn" href="mailto:YOUR_EMAIL@example.com">Email Me →</a>
+    </div>
+
+    <div class="contact-box">
+      <h3>Contact Details</h3>
+
+      <p>
+        ✉ Email:
+        <a class="gold" href="mailto:YOUR_EMAIL@example.com">
+          YOUR_EMAIL@example.com
+        </a>
+      </p>
+
+      <p>⌖ Coimbatore, Tamil Nadu</p>
+      <p>◷ Delivery: 2–3 days depending on work</p>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <a class="logo" href="#home">Coloring <span>by Photofuel</span></a>
+    <span>Professional Photo Retouching & Color Grading</span>
+    <span>© <span id="year"></span> Coloring by Photofuel</span>
+  </div>
+</footer>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", function () {
+  navLinks.classList.toggle("open");
+});
+
+navLinks.querySelectorAll("a").forEach(function (link) {
+  link.addEventListener("click", function () {
+    navLinks.classList.remove("open");
+  });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
